@@ -1,0 +1,25 @@
+# 로깅
+logging:
+  level:
+    root: info
+    org.springframework.boot.web: info
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  datasource:
+    url: jdbc:h2:~/test
+  h2:
+    console:
+      enabled: true
+
+# API 관련
+api:
+  kakao:
+    book:
+      uri: https://dapi.kakao.com/v3/search/book?target=title
+      key: ee496cdbb5fd7909d0b309ec6be6abc2
+
+
+
