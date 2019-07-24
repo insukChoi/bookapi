@@ -1,16 +1,14 @@
-package com.insuk.bookapi.book.dto;
+package com.insuk.bookapi.book.dto.kakao;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.insuk.bookapi.book.dto.ApiDtoParents;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -19,7 +17,7 @@ import java.util.Map;
 })
 @Getter
 @Setter
-public class ApiDto {
+public class ApiDto implements ApiDtoParents {
     final static public ApiDto EMPTY = new ApiDto();
 
     @JsonProperty("documents")

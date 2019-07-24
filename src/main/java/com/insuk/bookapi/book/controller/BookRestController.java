@@ -1,7 +1,8 @@
 package com.insuk.bookapi.book.controller;
 
 import com.insuk.bookapi.book.domain.SearchBook;
-import com.insuk.bookapi.book.dto.ApiDto;
+import com.insuk.bookapi.book.dto.ApiDtoParents;
+import com.insuk.bookapi.book.dto.kakao.ApiDto;
 import com.insuk.bookapi.book.service.BookService;
 import com.insuk.bookapi.book.service.MyHistoryService;
 import com.insuk.bookapi.entertainment.service.HotKeywordService;
@@ -34,7 +35,7 @@ public class BookRestController {
     private HotKeywordService hotKeywordService;
 
     @RequestMapping(value = "/search", produces = {"application/json; charset=UTF-8"})
-    public ResponseEntity<ApiDto> bookSearch(@ModelAttribute @Valid SearchBook searchBook,
+    public ResponseEntity<ApiDtoParents> bookSearch(@ModelAttribute @Valid SearchBook searchBook,
                                              @RequestParam(value = "enterSearch", required = false, defaultValue = "false") boolean isEnterSearch,
                                              BindingResult result, Principal user){
         log.info("keyword = " + searchBook.getSearchKeyword());
@@ -53,7 +54,7 @@ public class BookRestController {
         }
 
         // 책 검색 API 호출
-        ApiDto apiDto = bookService.getSearchBookApi(searchBook);
+        ApiDtoParents apiDto = bookService.getSearchBookApi(searchBook);
 
         return new ResponseEntity<>(apiDto, HttpStatus.OK);
     }

@@ -1,8 +1,7 @@
-package com.insuk.bookapi.book.dto;
+package com.insuk.bookapi.book.dto.kakao;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
 import lombok.Setter;
 

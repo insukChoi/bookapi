@@ -1,10 +1,7 @@
 package com.insuk.bookapi.book.service;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.insuk.bookapi.book.dto.ApiDto;
-import com.insuk.bookapi.book.dto.BookDto;
+import com.insuk.bookapi.book.dto.kakao.BookDto;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +10,6 @@ import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

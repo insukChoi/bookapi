@@ -1,4 +1,4 @@
-package com.insuk.bookapi.book.dto;
+package com.insuk.bookapi.book.dto.kakao;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -30,7 +31,7 @@ public class BookDto {
     private String isbn;
 
     @JsonProperty("authors")
-    private ArrayList<String> authors = new ArrayList<>();
+    private List<String> authors = new ArrayList<>();
 
     @JsonProperty("publisher")
     private String publisher;

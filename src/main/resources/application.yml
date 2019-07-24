@@ -20,6 +20,11 @@ api:
     book:
       uri: https://dapi.kakao.com/v3/search/book?target=title
       key: ee496cdbb5fd7909d0b309ec6be6abc2
+  naver:
+    book:
+      uri: https://openapi.naver.com/v1/search/book.json
+      client-id: vskdM_IkXrgtz57or75U
+      client-secret: V8SuqwGUJE
 
 
 
