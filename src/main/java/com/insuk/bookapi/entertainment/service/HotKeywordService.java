@@ -2,6 +2,7 @@ package com.insuk.bookapi.entertainment.service;
 
 import com.insuk.bookapi.book.domain.SearchBook;
 import com.insuk.bookapi.entertainment.domain.HotKeyword;
+import com.insuk.bookapi.entertainment.domain.exception.CannotSaveHotkeyword;
 import com.insuk.bookapi.entertainment.repository.HotKeywordRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,8 @@ public class HotKeywordService {
             HotKeyword hotKeyword = new HotKeyword(searchBook.getSearchKeyword(), new AtomicInteger(1));
             savedHotkeyword = hotKeywordRepository.save(hotKeyword);
         }
+
+        if (savedHotkeyword == HotKeyword.EMPTY) throw new CannotSaveHotkeyword("인기 키워드 등록에 실패하였습니다.");
 
         return savedHotkeyword;
     }
